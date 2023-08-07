@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Shooting Game</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    
+    <script src="bullets.js"></script>
+  </head>
+  <body>
+    <a-scene id="scene" physics>
+      <!--Light-->
+      <a-entity light="type:ambient;color:yellow;intensity:0.8"></a-entity>
+
+      <!--Camera and Cursor-->
+      <a-entity
+        id="camera"
+        position="0 1.6 0"
+        wasd-controls
+        look-controls="pointerLocked:true"
+      >
+        <a-cursor></a-cursor>
+      </a-entity>
+
+      <!--Bullets-->
+      <a-entity bullets></a-entity>
+
+      <!--Ground-->
+      <a-plane
+       id="ground"
+       repeat="5 5"
+       position="0 1 0"
+       rotation="-90 0 0"
+       height="200"
+       width="200"
+       color="#fbf2d4"
+       visible="true"
+      static-body
+      ></a-plane>
+
+      <!--Boxes-->
+
+      <a-box position="-2 1.5 -10" color="tomato"></a-box>
+
+      <a-box position="0 1.5 -10" color="tomato"></a-box>
+
+      <a-box position="2 1.5 -10" color="tomato"></a-box>
+      
+      <a-box position="-1 2.5 -10" color="tomato"></a-box>
+
+      <a-box position="1 2.5 -10" color="tomato"></a-box>
+
+      <a-box position="0 3.5 -10" color="tomato"></a-box>
+
+
+    </a-scene>
+  </body>
+</html>
